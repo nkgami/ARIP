@@ -1,0 +1,76 @@
+ICMPpacket	KEYWORD3
+UDPpacket	KEYWORD3
+IPpacket	KEYWORD3
+Frame	KEYWORD3
+SNMPpacket	KEYWORD3
+Net_util	KEYWORD3
+
+init	KEYWORD2
+gettype	KEYWORD2
+settype	KEYWORD2
+getcode	KEYWORD2
+setcode	KEYWORD2
+getid	KEYWORD2
+setid	KEYWORD2
+getsnumber	KEYWORD2
+setsnumber	KEYWORD2
+
+setpacket	KEYWORD2
+setfake	KEYWORD2
+checksum	KEYWORD2
+get_payload_s	KEYWORD2
+getudphdr	KEYWORD2
+getlen	KEYWORD2
+set_payload	KEYWORD2
+
+setdefaulthdr	KEYWORD2
+setproto	KEYWORD2
+setaddr	KEYWORD2
+setlen	KEYWORD2
+getiphdr	KEYWORD2
+get_payload_s	KEYWORD2
+
+setframe	KEYWORD2
+set_total_len	KEYWORD2
+set_payload_len	KEYWORD2
+sethdr	KEYWORD2
+getiphdr	KEYWORD2
+getfrlen_nocrc	KEYWORD2
+getfrlen_withcrc	KEYWORD2
+checkcrc	KEYWORD2
+setcrc	KEYWORD2
+
+iphdr	KEYWORD1
+fakehdr	KEYWORD1
+udphdr	KEYWORD1
+icmp_erhdr	KEYWORD1
+
+get_length	KEYWORD2
+get_version	KEYWORD2
+get_comname_p	KEYWORD2
+get_comname_p	KEYWORD2
+get_comname_len	KEYWORD2
+get_pdu_type	KEYWORD2
+get_pdu_len	KEYWORD2
+get_reqid_type	KEYWORD2
+get_reqid_len	KEYWORD2
+get_reqid_p	KEYWORD2
+get_errst	KEYWORD2
+get_errin	KEYWORD2
+get_varib_type	KEYWORD2
+get_varib_len	KEYWORD2
+get_varib_p	KEYWORD2
+get_value_type	KEYWORD2
+get_value_len	KEYWORD2
+get_value_p	KEYWORD2
+set_length	KEYWORD2
+set_pdu_type	KEYWORD2
+set_pdu_len	KEYWORD2
+set_errst	KEYWORD2
+set_errin	KEYWORD2
+set_value	KEYWORD2
+packet	KEYWORD2
+length	KEYWORD2
+
+ntohl	KEYWORD2
+ntohs	KEYWORD2
