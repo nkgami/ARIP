@@ -2,9 +2,6 @@
 #include "ARIP.h"
 #include "utils.h"
 
-// 初期化処理を行う関数
-// コンストラクタは　クラス名::クラス名と同じ名前で構成します
-
 SNMPpacket::SNMPpacket()
 {
 	packet = NULL;
@@ -357,7 +354,6 @@ void UDPpacket::init()
 	h_udp = NULL;
 }
 
-// クラス名::関数名() で構成します
 void UDPpacket::setpacket(unsigned char *p){
 	packet = p;
 	h_udp = (struct udphdr*)(packet);
@@ -479,7 +475,6 @@ void IPpacket::init()
 	h_ip = NULL;
 }
 
-// クラス名::関数名() で構成します
 void IPpacket::setpacket(unsigned char *p){
 	packet = p;
 	h_ip = (struct iphdr*)packet;
