@@ -700,3 +700,41 @@ unsigned int Net_util::ntohs(unsigned int source)
   bytes_r[1] = bytes_s[0];
   return result;
 }
+
+unsigned short Net_util::checksum(unsigned short *buf, int bufsize)
+{
+	unsigned long sum = 0;
+	while( bufsize > 1 ) {
+		sum += *buf;
+		buf++;
+		bufsize -= 2;
+	}
+	if ( bufsize == 1 ){
+		sum += *(unsigned char *)buf;
+	}
+	sum = (sum & 0xffff) + (sum >> 16);
+	sum = (sum & 0xffff) + (sum >> 16);
+	return ~sum;
+}
+
+unsigned short Net_util::checksum_udp(unsigned short *fake,unsigned short *buf, int bufsize)
+{
+	unsigned long sum = 0;
+	int fake_len = 12;
+	while(fake_len > 1){
+		sum+= *fake;
+		fake++;
+		fake_len-=2;
+	}
+	while( bufsize > 1 ) {
+		sum += *buf;
+		buf++;
+		bufsize -= 2;
+	}
+	if ( bufsize == 1 ){
+		sum += *(unsigned char *)buf;
+	}
+	sum = (sum & 0xffff) + (sum >> 16);
+	sum = (sum & 0xffff) + (sum >> 16);
+	return ~sum;
+}

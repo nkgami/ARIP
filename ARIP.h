@@ -13,5 +13,7 @@ class Net_util
     Net_util();
     unsigned long ntohl(unsigned long source);
     unsigned int ntohs(unsigned int source);
+		unsigned short checksum(unsigned short *buf, int bufsize);
+		unsigned short checksum_udp(unsigned short *fake,unsigned short *buf, int bufsize);
 };
 #endif

@@ -11,7 +11,7 @@ arduino
 just put ARIP to libraries folder (in usual /usr/share/arduino/libraries)
 
 ## Usage
-put sample sketch for this library on github later.
+See examples/iprs485.ino (program for IP over RS485)
 
 ## Licence
 

@@ -74,3 +74,5 @@ length	KEYWORD2
 
 ntohl	KEYWORD2
 ntohs	KEYWORD2
+checksum	KEYWORD2
+checksum_udp	KEYWORD2
