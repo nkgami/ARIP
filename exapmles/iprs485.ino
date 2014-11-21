@@ -9,9 +9,11 @@
 #define IPLENMAX 9999
 
 //node settings
-#define IPADDR 0x020BA8C0//192.168.11.*
+#define IPADDR 0x050BA8C0//192.168.11.*
 #define BRADDR 0xFF0BA8C0//broadcast
-#define NODENAME "node1"
+#define NODENAME "node4"
+#define INTERFRAMEGAP 1000//us
+#define CSMAWAIT 60//ms, max wait
 
 #define DEBUG 0
 
@@ -461,7 +463,7 @@ static int thread_read(struct pt *pt){
 	ct = 0;
 	Serial.print("thread_read start\n");
 	while(1){
-		utimer_set(&timeout,1000);//wait for data
+		utimer_set(&timeout,INTERFRAMEGAP);//wait for data
 		PT_WAIT_UNTIL(pt,Serial3.available() || utimer_expired(&timeout));
 		if (utimer_expired(&timeout)){//timeout and reset
 			#if DEBUG
@@ -472,7 +474,7 @@ static int thread_read(struct pt *pt){
 			packet_len = 0;
 			ip_len=IPLENMAX;
 			if (sendque_lest > 0){//if there are any data on queue
-				utimer_set(&timeout3,(random(0,1000)*100));//random wait
+				utimer_set(&timeout3,(random(0,1000)*CSMAWAIT));//random wait
 				PT_WAIT_UNTIL(pt,Serial3.available() || utimer_expired(&timeout3));
 				if (Serial3.available()){
 					continue;
